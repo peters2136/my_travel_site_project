@@ -37,6 +37,10 @@ body {
   color: darkslategray;
 }
 
+.background {
+  width: 100%;
+}
+
 header {
   font-size: 20px;
   background-color: aquamarine;
