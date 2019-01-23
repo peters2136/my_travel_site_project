@@ -7,22 +7,37 @@ html {
   box-sizing: inherit;
 }
 
-
 body {
   background-image: url("../images/background_1.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;
+  min-width: 300px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
-  background-color: rgb(9, 56, 128);
+  background-color: rgb(184, 184, 185);
 }
 
+.logo {
+  float: left;
+  width: 30%;
+  max-width: 150px;
+  min-width: 150px;
+  margin-top: -4px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
 
-header {
-  font-size: 20px;
-  width: 100%;
+.h_welcome {
+  font-size: 2vw;
   color: antiquewhite;
+  height: 30vw;
+}
+
+@media only screen and (max-width: 790px) {
+  .h_welcome {
+    font-size: 15px;
+  }
 }
 
 nav{
