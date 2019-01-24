@@ -1,8 +1,33 @@
-// Build header
+/****************************************************************
+ *                                                              *
+ *                                                              *
+ *                      HEADER BLOCK                            *
+ *                                                              *
+ *                                                              *
+ ***************************************************************/
+var headerElement = document.getElementsByTagName("header")[0];
+var headerArrayText = [
+    ["index.html", "Welcome Travel Experts"]
+    ["contact.html", "Contact Us"]
+    ["register.html", "Register Now!"]
+]
+
+var headerH1 = document.createElement("h1");
+// var headerText = document.createTextNode()
+var strLogoSource = "images/logo.jpg";
+var headerImg = document.createElement("img");
+headerImg.src = 
 
 
 
-//Create nav tag content
+/****************************************************************
+ *                                                              *
+ *                                                              *
+ *                      NAV BLOCK                               *
+ *                                                              *
+ *                                                              *
+ ***************************************************************/
+
 var menuArray = [
     ["Home", "index.html"],
     ["Contact","contact.html"],
@@ -17,7 +42,6 @@ navList.className = "navList";
 for (var i = 0; i < menuArray.length; i++) {
     var navListItem = document.createElement("li");  
     navListItem.className = "navListItem";
-
     var navA = document.createElement("a")
     navA.innerHTML = menuArray[i][0];
     navA.href = menuArray[i][1];
@@ -27,8 +51,33 @@ for (var i = 0; i < menuArray.length; i++) {
 console.log(navList);
 navElement.appendChild(navList);
 
-//placeholder - addstyles
+//placeholder - addstyles -- how do I do this?????
 
 
-//Build footer
+
+
+
+/****************************************************************
+ *                                                              *
+ *                                                              *
+ *                      FOOTER BLOCK                            *
+ *                                                              *
+ *                                                              *
+ ***************************************************************/
+
+var footerElement = document.getElementsByTagName("footer")[0];
+var footerP = document.createElement("p");
+footerP.className = "footer"
+footerP.innerHTML = "&copy; TravelCo Inc., 2019"
+
+footerElement.appendChild(footerP);
+
+
+
+
+
+
+
+
+
 
