@@ -1,28 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/sanitize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>TravelCo Inc</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/sanitize.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>TravelCo Inc</title>
 </head>
 <body>
     <header class="header" id="header">
-        <img src="images/TravelLogo.jpg" alt="TravelCo Logo">
-        <h1>Weclome Travel Experts</h1>
+                <h1 class="h_welcome"><img class="logo" src="images/Logo.jpg" alt="TravelCo Logo">Welcome Travel Experts</h1>
     </header>
-    <nav class="nav"  id="nav"> 
+    <nav class="nav"  id="nav">
+            <!-- Nav Menu content block generated via scripts.js -->
     </nav>
     <main>
-        <form class="user-form" id="register-form">
-            <p class="form-label"></p>Name<input type="text"></p>
-            <p class="form-label">Address</p> <input type="text"></p>
-            <p class="form-label">City</p> <input type="text"></p>
-            <p class="form-label">Provice/State</p> <input type="text"></p>
-            <p class="form-label">Country</p> <input type="text"></p>
-            <p class="form-label">Postal Code</p> <input type="text"></p>
+        <form action="bouncer.php" class="reg-form" id="register-form">
+            <table>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custName">Name</label></td>
+                    <td class="form-control"><input type="text" class="regControl" name="custName" id="custName"></td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custAddress">Street Address</label></td>
+                    <td class="form-control"><input type="text" class="regControl" name="custAddress" id="custAddress"></td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custCity">City</label></td>
+                    <td class="form-control"><input type="text" class="regControl" name="custCity" id="custCity"></td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custProvState">Province/State</label></td>
+                    <td class="form-control">
+                        <select name="selectBoxDropDown">
+                            <option value="AB">AB</option>
+                            <option value="BC">BC</option>
+                            <option value="SK">SK</option>
+                        </select><br>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custPC">Postal Code</label></td>
+                    <td class="form-control"><input type="text" class="regControl" name="custPC" id="custPC"></td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custPhone">Phone</label></td>
+                    <td class="form-control">
+                        <input type="text" class="regControl" name="custPhone1" id="custPhone1">
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custEmail"></label></td>
+                    <td class="form-control"><input type="email" class="regControl" name="custEmail" id="custEmail"></td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption">Preferred Locations<br>(check all that apply)</td>
+                    <td class="form-control">
+                        <input type="checkbox" name="ckNorthAmerica" value="North America" id="ckNorthAmerica"/>
+                        <label for="ckNorthAmerica">North America</label><br>
+                        <input type="checkbox" name="ckEurope" value="Europe" id="ckEurope" />
+                        <label for="ckEurope">Europe</label><br>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption">Priority</td>
+                    <td>
+                        <input type="radio" name="rdPriority" value="Adventure" id="rdAdventure" /> 
+                        <label for="varPepperoni">Adventure</label><br>
+                        <input type="radio" name="rdPriority" value="Relaxation" id="rdRelaxation" /> 
+                        <label for="varPepperoni">Relaxation</label><br>
+                        <input type="radio" name="rdPriority" value="Site Seeing" id="rdSiteSeeing" /> 
+                        <label for="varPepperoni">Site Seeing</label><br>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption" colspan="2">
+                        <input type="submit" value="Submit" id="regSubmit"></input>
+                        <input type="reset" value="Reset" id="regReset"></input>
+                    </td>
+                </tr>
+            </table> 
         </form>
     </main>
     <footer>

@@ -1,11 +1,32 @@
 
-/* Set up box-sizing */
+/********************************************
+*                                           *
+*             BOX-SIZING ACROSS SITE        *
+*                                           *
+*********************************************/
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+
+/*********************************************
+*                                            *
+*               INSTALL CLEAR FIX            *
+*                                            *
+**********************************************/
+
+
+
+
+/********************************************
+*                                           *
+*             MAIN ELEMENTS - ALL PAGES     *
+*                                           *
+*********************************************/
+
 
 body {
   background-image: url("../images/background_1.jpg");
@@ -15,7 +36,8 @@ body {
   min-width: 300px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
-  background-color: rgb(184, 184, 185);
+  background-color: rgb(206, 206, 253);
+  font-size: 12px;
 }
 
 .logo {
@@ -28,11 +50,14 @@ body {
   margin-right: 8px;
 }
 
+header {
+    height: 40vw;
+}
 
 .h_welcome {
-  color: antiquewhite;
+  color: rgb(49, 78, 156);
   font-size: 2vw;
-  height: 40vw;
+
 }
 
 @media only screen and (max-width: 790px) {
@@ -41,13 +66,95 @@ body {
   }
 }
 
-nav{
-  background-color: blueviolet;
-  width: 100%;
+main {
+  padding: 10px;
+}
+/********************************************
+*                                           *
+*                NAV                        *
+*                                           *
+*********************************************/
+
+nav {
+  color:rgb(214, 212, 212);
+  background-color: rgb(168, 168, 168);
+  font-size: 12px;
+  box-shadow: 0 2px 1px 0 rgb(94, 92, 92);
+  padding: 0px;
+  margin-top: -20px;
 }
 
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ .nav ul li {
+  float: left;
+}
+
+.nav ul li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.nav ul li a:visited {
+  color: rgb(255, 255, 255);
+}  
+
+.nav ul li a:hover, a:focus {
+  background-color: rgb(121, 116, 150);
+} 
+
+/********************************************
+*                                           *
+*                FOOTER                     *
+*                                           *
+*********************************************/
+
 footer {
-  background-color: dimgray;
-  size: 8pt;
-  color: rgb(189, 186, 186);
+  background-color: rgb(168, 168, 168);
+}
+
+footer p {
+  font-size: 10px;
+  color: rgb(49, 78, 156);
+  margin: 0;
+  padding: 6px;
+}
+
+
+/********************************************
+*                                           *
+*                REGISTRATION FORM         *
+*                                           *
+*********************************************/
+
+.reg-form {
+  font-size: 0.8em;
+  align-content: center;
+}
+
+.form-caption {
+  width: 20%;
+}
+
+.form-row {
+  margin: 20px;
+}
+
+/********************************************
+*                                           *
+*                PHOTO ARRAY                *
+*                                           *
+*********************************************/
+
+.photo-round {
+  border-radius: 3%;
+  padding:2px;
 }
