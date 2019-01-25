@@ -52,11 +52,13 @@ body {
 
 header {
     height: 40vw;
+    margin: 0;
 }
 
 .h_welcome {
   color: rgb(49, 78, 156);
   font-size: 2vw;
+  text-align: left;
 
 }
 
@@ -68,6 +70,12 @@ header {
 
 main {
   padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+section {
+  margin: auto;
 }
 /********************************************
 *                                           *
