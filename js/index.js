@@ -103,7 +103,7 @@ for (i = 0; i < 6; i++) {
 
     //add event listener to open arPhotoURL href in new window, then
     //automatically close the window using timing set for 3 seconds
-    fnOnClickOpenLinkInNewWindow(arPhotoURLs[i]);
+    fnOnClickOpenLinkInNewWindow(arPhotoURLs[i],newImg);
 
     newTblCol.appendChild(newImg);
     newTblRow.appendChild(newTblCol);
@@ -128,8 +128,16 @@ console.log(newTbl);
 
 mainSection.appendChild(newTbl);
 
-function fnOnClickOpenLinkInNewWindow(strURL) {
-    newImg.addEventListener("click",function(event){
+/****************************************************************
+ *                                                              *
+ *                                                              *
+ *                      IMAGE EVENT LISTENER                    *
+ *                                                              *
+ *                                                              *
+ ***************************************************************/
+
+function fnOnClickOpenLinkInNewWindow(strURL, objImg) {
+    objImg.addEventListener("click",function(event){
         //open the URL in new window
         var wndwTemp = window.open(strURL);
 
