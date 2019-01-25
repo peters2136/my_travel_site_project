@@ -1,27 +1,3 @@
-
-var currentPage = window.location.pathname;
-var currentURL = window.location.currentURL;
-console.log(currentPage);
-console.log(currentURL);
-
-//for all pages
-/* load: - header
-         - nav menu
-         - footer
-
-// if index.html
-         - load photo gallery
-
-
-// if registration.html
-         - 
-
-
-
-
-
-
-
 /****************************************************************
  *                                                              *
  *                                                              *
