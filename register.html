@@ -10,25 +10,33 @@
 </head>
 <body>
     <header class="header" id="header">
-                <h1 class="h_welcome"><img class="logo" src="images/Logo.jpg" alt="TravelCo Logo">Welcome Travel Experts</h1>
+        <h1  class="h_welcome"><img class="logo" src="images/Logo.jpg" alt="TravelCo Logo">Welcome Travel Experts</h1>
+        <nav class="nav"  id="nav"></nav><!-- Nav Menu content block generated via scripts.js --> 
     </header>
-    <nav class="nav"  id="nav">
-            <!-- Nav Menu content block generated via scripts.js -->
-    </nav>
+    <div class="header-spacer"></div>
     <main>
         <form action="bouncer.php" class="reg-form" name="infoForm" id="infoForm">
             <table>
                 <tr class="form-row">
                     <td class="form-caption"><label for="custName">Name</label></td>
-                    <td class="form-control"><input type="text" class="regControl" name="custName" id="custName"></td>
+                    <td class="form-control">
+                        <input type="text" class="regControl" name="custName" id="custName">
+                        <p class="form-instructions" id="custNameInstruct"></p>
+                    </td>
                 </tr>
                 <tr class="form-row">
                     <td class="form-caption"><label for="custAddress">Street Address</label></td>
-                    <td class="form-control"><input type="text" class="regControl" name="custAddress" id="custAddress"></td>
+                    <td class="form-control">
+                        <input type="text" class="regControl" name="custAddress" id="custAddress">
+                        <p class="form-instructions" id="custAddressInstruct"></p>
+                    </td>
                 </tr>
                 <tr class="form-row">
                     <td class="form-caption"><label for="custCity">City</label></td>
-                    <td class="form-control"><input type="text" class="regControl" name="custCity" id="custCity"></td>
+                    <td class="form-control">
+                        <input type="text" class="regControl" name="custCity" id="custCity">
+                        <p class="form-instructions" id="custCityInstruct"></p>
+                    </td>
                 </tr>
                 <tr class="form-row">
                     <td class="form-caption"><label for="custProvState">Province/State</label></td>
@@ -42,20 +50,29 @@
                 </tr>
                 <tr class="form-row">
                     <td class="form-caption"><label for="custPC">Postal Code</label></td>
-                    <td class="form-control"><input type="text" class="regControl" name="custPC" id="custPC"></td>
+                    <td class="form-control">
+                        <input type="text" class="regControl" name="custPC" id="custPC">
+                        <p class="form-instructions" id="custPCInstruct"></p>
+                    </td>
                 </tr>
                 <tr class="form-row">
                     <td class="form-caption"><label for="custPhone">Phone</label></td>
                     <td class="form-control">
                         <input type="text" class="regControl" name="custPhone1" id="custPhone1">
+                        <p class="form-instructions" id="custNameInstruct"></p>
                     </td>
                 </tr>
                 <tr class="form-row">
-                    <td class="form-caption"><label for="custEmail"></label></td>
-                    <td class="form-control"><input type="email" class="regControl" name="custEmail" id="custEmail"></td>
+                    <td class="form-caption"><label for="custEmail">Email</label></td>
+                    <td class="form-control">
+                        <input type="email" class="regControl" name="custEmail" id="custEmail">
+                        <p class="form-instructions" id="custNameInstruct"></p>
+                    </td>
                 </tr>
                 <tr class="form-row">
-                    <td class="form-caption">Preferred Locations<br>(check all that apply)</td>
+                    <td class="form-caption">Preferred Locations
+                            <p class="form-instructions" id="custLocationInstruct">(check all that apply)</p>
+                    </td>
                     <td class="form-control">
                         <input type="checkbox" name="ckNorthAmerica" value="North America" id="ckNorthAmerica"/>
                         <label for="ckNorthAmerica">North America</label><br>
@@ -82,10 +99,11 @@
                 </tr>
             </table> 
         </form>
-    </main>
-    <footer>
+        <footer>
         <!-- Footer content block generated via scripts.js -->
-    </footer>
+        </footer>
+    </main>
+
     <script src="js/registration.js"></script>
     <script src="js/scripts.js"></script>
 </body>
