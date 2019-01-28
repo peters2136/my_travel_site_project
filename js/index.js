@@ -6,11 +6,11 @@
  *                                                              *
  ***************************************************************/
 
-
-
-//see example: https://repl.it/@htovey/createElementTable
-// note - event listeners have to be appended when you create the element
-
+//When page loads, a table is generated with photos, descriptions
+//stored within the function arrays (arPhotoPath, arPhotoDesc, arPhotoURLs). 
+//For each image, a function is called  to add event listener 
+//for each photo image that opens associated arPhotoURL link in new 
+//window, then automatically closes the window using timing set for 3 seconds
 
 var mainSection = {};
 var newTbl = {};
@@ -18,13 +18,13 @@ var newTblRow = {};
 var newTblCol = {};
 var newTblP = {};
 var newImg = {};
-var arPhotoPath= [];
-var arPhotoDesc = [];
-var arPhotoURLs = [];
+var arPhotoPath= [];  //file paths of photos
+var arPhotoDesc = []; //descriptions of photos
+var arPhotoURLs = []; //URLs for photos
 var i = 0;
 var j = 0;
 
-
+//populate array for image files
 arPhotoPath = [
     "simon-migaj-421505-unsplash.jpg",
     "rebe-adelaida-293711-unsplash.jpg",
@@ -34,6 +34,7 @@ arPhotoPath = [
     "linh-nguyen-145766-unsplash.jpg"
 ];
 
+//populate array for image descriptions
 arPhotoDesc = [
     "Königssee, Schönau am Königssee, Germany",
     "Photo of gondolas on body of water between buildings in Seville",
@@ -43,6 +44,7 @@ arPhotoDesc = [
     "Manarola, Italy"
 ];
 
+//populate array for image URLs that will load when image is clicked
 arPhotoURLs = [
     "https://unsplash.com/photos/Yui5vfKHuzs",
     "https://unsplash.com/photos/zunQwMy5B6M",
@@ -52,7 +54,7 @@ arPhotoURLs = [
     "https://unsplash.com/photos/DNE9iZ1Kqzk"
 ];
 
-//create new table
+//create new table to display images
 mainSection = document.getElementById("index-photo-gallery");
 newTbl = document.createElement("table");
 newTbl.style.width = "80%";
@@ -101,8 +103,9 @@ for (i = 0; i < 6; i++) {
     newImg.alt = "Alt Text Goes Here";
     newImg.style.maxWidth = "100%";
 
-    //add event listener to open arPhotoURL href in new window, then
-    //automatically close the window using timing set for 3 seconds
+    //call function to add event listener for each photo image that
+    //opens associated arPhotoURL link in new window, then
+    //automatically closes the window using timing set for 3 seconds
     fnOnClickOpenLinkInNewWindow(arPhotoURLs[i],newImg);
 
     newTblCol.appendChild(newImg);
@@ -128,10 +131,17 @@ console.log(newTbl);
 
 mainSection.appendChild(newTbl);
 
+/******************************************END***************************************/
+
 /****************************************************************
  *                                                              *
  *                                                              *
  *                      IMAGE EVENT LISTENER                    *
+ *                                                              *
+ * When image (objImg) in the image gallery is clicked, a new   *
+ * tab with the URL (strURL) specified for the image object     *
+ * will open up for 3 seconds, then close automatically.        *
+ *                                                              *                   
  *                                                              *
  *                                                              *
  ***************************************************************/

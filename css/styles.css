@@ -17,13 +17,38 @@ html {
 *               INSTALL CLEAR FIX            *
 *                                            *
 **********************************************/
-
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+ .cf:before,
+ .cf:after {
+     content: " "; /* 1 */
+     display: table; /* 2 */
+ }
+ 
+ .cf:after {
+     clear: both;
+ }
+ 
+ /**
+  * For IE 6/7 only
+  * Include this rule to trigger hasLayout and contain floats.
+  */
+ .cf {
+     *zoom: 1;
+ }
 
 
 
 /********************************************
 *                                           *
-*             MAIN ELEMENTS - ALL PAGES     *
+*      COMMON ELEMENTS ACROSS ALL PAGES     *
 *                                           *
 *********************************************/
 
@@ -55,17 +80,14 @@ header {
     background-color: rgb(255,255,255, 0.5);  
     
 }
-/* .header-spacer {
-    height: 24.5vw; 
-} */
 
 .h_welcome {
   color: rgb(49, 78, 156);
   font-size: 2vw;
   text-align: left;
-
 }
 
+/* limit font size to 15px when screen size >= 790px */
 @media only screen and (max-width: 790px) {
   .h_welcome {
     font-size: 15px;
@@ -106,9 +128,10 @@ section {
 
 /********************************************
 *                                           *
-*                NAV                        *
+*                NAV MENU                   *
 *                                           *
 *********************************************/
+
 
 nav {
   color:rgb(214, 212, 212);
@@ -166,8 +189,8 @@ footer p {
 
 /********************************************
 *                                           *
-*                REGISTRATION FORM         *
-*                                           *
+*             REGISTRATION FORM ON          *
+*                 register.html             *
 *********************************************/
 
 .reg-form {
@@ -180,6 +203,7 @@ footer p {
   color: rgb(189, 10, 4);
   display:none;
 }
+
 label {
   display: inline-block;
   width: 80px;
@@ -188,8 +212,8 @@ label {
 
 /********************************************
 *                                           *
-*                PHOTO ARRAY                *
-*                                           *
+*          PHOTO ARRAY AND GALLERY          *
+*                 on index.html             *
 *********************************************/
 
 .photo-round {
@@ -198,6 +222,7 @@ label {
 }
 
 .photo-gallery-content {
-  width: "30%"
+  width: "30%";
+  border-radius: 3%;
 }
 

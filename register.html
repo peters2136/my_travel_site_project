@@ -15,32 +15,33 @@
     </header>
     <div class="header-spacer"></div>
     <main>
+        <section class="section-head">start planning your custom experience today</section>
         <form action="bouncer.php" class="reg-form" name="infoForm" id="infoForm">
-            
+            <p>* denotes required field</p>
             <!-- Customer Name -->
             <p>
-                <label class="formItemDesc" for="custName" id="custNameLabel">Name</label>
+                <label class="formItemDesc" for="custName" id="custNameLabel">Name*</label>
                 <input type="text" class="formInputCtrl" name="custName" id="custName">
             </p>
             <p class="form-instructions" id="custNameInstruct">Please provide First and Last name.</p>
             
             <!-- Customer street address -->
             <p>
-                <label class="formItemDesc" for="custAddress" id="custAddressLabel">Street Address</label>
+                <label class="formItemDesc" for="custAddress" id="custAddressLabel">Street Address*</label>
                 <input type="text" class="formInputCtrl" name="custAddress" id="custAddress">
             </p>
             <p class="form-instructions" id="custAddressInstruct">Provide full street address.</p>
             
             <!-- Customer City -->
             <p>
-                <label class="formItemDesc" for="custCity" id="custCityLabel">City</label>
+                <label class="formItemDesc" for="custCity" id="custCityLabel">City*</label>
                 <input type="text" class="formInputCtrl" name="custCity" id="custCity">  
             </p>
             <p class="form-instructions" id="custCityInstruct">Enter a complete city name.</p>
             
             <!-- Customer Prov/State -->
             <p>
-                <label class="formItemDesc" for="custProvState" id="custProvStateLabel">Province/State</label>
+                <label class="formItemDesc" for="custProvState" id="custProvStateLabel">Province/State*</label>
                 <select name="selectBoxDropDown">
                     <option value="AB">AB</option>
                     <option value="BC">BC</option>
@@ -49,21 +50,21 @@
             </p>
             <!-- Customer PC -->
             <p>
-                <label class="formItemDesc" for="custPC" id="custPCLabel">Postal Code</label>
+                <label class="formItemDesc" for="custPC" id="custPCLabel">Postal Code*</label>
                 <input type="text" class="formInputCtrl" name="custPC" id="custPC" pattern="^[A-Z]\d[A-Z] ?\d[A-Z]\d$">   
             </p>
             <p class="form-instructions" id="custPCInstruct">Please format as A5A 5A5.</p>
             
             <!-- Customer Phone -->
             <p>
-                <label class="formItemDesc" for="custPhone1" id="custPhone1Label">Phone</label>
+                <label class="formItemDesc" for="custPhone1" id="custPhone1Label">Phone*</label>
                 <input type="text" class="formInputCtrl" name="custPhone1" id="custPhone1">
             </p>
             <p class="form-instructions" id="custPhone1Instruct">10 digits with dashes (i.e. ###-###-####)</p>
             
             <!-- Customer Email -->
             <p>
-                <label class="formItemDesc" for="custEmail" id="custEmailLabel">Email</label>
+                <label class="formItemDesc" for="custEmail" id="custEmailLabel">Email*</label>
                 <input type="email" class="formInputCtrl" name="custEmail" id="custEmail" pattern=".@+.+\.+.">
                 <p class="form-instructions" id="custEmailInstruct">Valid email address required (i.e. name@email.com)</p>
             </p>
@@ -75,7 +76,7 @@
                 <label for="ckNorthAmerica">North America</label><br>
                 <input type="checkbox" name="Destinations" value="Europe" id="ckEurope" />
                 <label for="ckEurope">Europe</label><br>
-                <p class="form-instructions" id="DestinationsInstruct" >select at least one location</p>
+                <p class="form-instructions" id="DestinationsInstruct" >select locations if they apply</p>
             </fieldset><br>
 
             <!-- Customer priority -->
@@ -98,8 +99,9 @@
         <!-- Footer content block generated via scripts.js -->
         </footer>
     </main>
-
+    <!-- Add script that populates nav menu and footer for all pages  -->
     <script src="js/registration.js"></script>
+    <!-- Add script for form validation, submit, reset and instructions  -->
     <script src="js/scripts.js"></script>
 </body>
 </html>
