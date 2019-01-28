@@ -89,12 +89,12 @@ section {
 }
 
 .section-head {
-  font-size: 1.5vw;
-  height: 4vw;
+  font-size: 12px;
+  height: 20px;
   border-top: thin solid grey;
   border-bottom: thin solid grey;
-  padding-top: 1vw;
-  padding-bottom: 1vw;
+  padding-top: 4px;
+  padding-bottom: 4px;
   margin: 10px;
 }
 
@@ -174,22 +174,6 @@ footer p {
   font-size: 0.8em;
   text-align: left;
 }
-
-/* .form-caption {
-  width: 30%;
-  margin-left: 2px;
-  margin-top: 0;
-  vertical-align: top;
-}
-
-.form-control {
-  vertical-align: top;
-}
-
-.form-row {
-  margin: 20px;
-  height: 40px;
-} */
 
 .form-instructions {
   font-size: 6pt;

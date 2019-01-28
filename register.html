@@ -64,7 +64,7 @@
             <!-- Customer Email -->
             <p>
                 <label class="formItemDesc" for="custEmail" id="custEmailLabel">Email</label>
-                <input type="email" class="formInputCtrl" name="custEmail" id="custEmail">
+                <input type="email" class="formInputCtrl" name="custEmail" id="custEmail" pattern=".@+.+\.+.">
                 <p class="form-instructions" id="custEmailInstruct">Valid email address required (i.e. name@email.com)</p>
             </p>
             
@@ -92,6 +92,7 @@
             <!-- Submit and Reset buttons -->
             <input type="submit" value="Submit" id="regSubmit"></input>
             <input type="reset" value="Reset" id="regReset"></input>
+            <p class="formError" id="formError" display="none"></p>
         </form>
         <footer>
         <!-- Footer content block generated via scripts.js -->

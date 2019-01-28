@@ -11,83 +11,100 @@
 
 //declare all variables used in function
 var btnSubmit = {};    
-var objFormControl = {};
-var objFormControlDesc = {};
-var userConfirm = {};
-var blnFormValid = true;
-var blnFormCtrlValid = true;
-var arFieldErrors = [];
-var strText = "";
-var regEx = new RegExp("");
-var i = 0;
-var strError = ""
-
-// var regExpression = {};
 
 btnSubmit = document.getElementById("regSubmit");
+btnSubmit.addEventListener('click',fnValidate);
 
-btnSubmit.addEventListener('click',function(event){
+
+function fnValidate(event){
+    var objFormControl = {};
+    var objFormControlDesc = {};
+    var userConfirm = {};
+    var blnFormValid = true;
+    var blnFormCtrlValid = true;
+    var arFieldErrors = [];
+    var strText = "";
+    var regEx = new RegExp("");
+    var i = 0;
+    var strError = ""
+    var objFormError = {};
+
+    // reset error message if one exists from previous submit attempt
+    objFormError = document.getElementById("formError");
+    objFormError.innerHTML = strError;
+    objFormError.display = "none";
+
     //prevent default submit action
     event.preventDefault();
 
     // start for loop to validate text and email input controls***************************************  //
     i = 0;
     objFormControl = document.getElementsByTagName("input");
-    console.log(objFormControl.length);
     for (i = 0; i < objFormControl.length; i++) {
-        console.log(i + " :: " + objFormControl[i].name);
         blnFormCtrlValid = true;  
-        if (objFormControl[i].type == "text") {
+        if (objFormControl[i].type == "text" || objFormControl[i].type == "email") {
+            
             if (!objFormControl[i].pattern) {
                 // element does not have pattern specified, so validate that control is not empty
                 console.log(objFormControl[i].value);
                 if (objFormControl[i].value === "") {
-                    console.log("field is empty");
                     blnFormValid = false;
                     blnFormCtrlValid = false;
-                    console.log(blnFormCtrlValid);
                 }
             } 
-            // else {
-            //  // element has pattern specified - get the pattern and test control input
-            //     console.log(objFormControl[i].type + " :: " + objFormControl[i].pattern);
-            //     regEx = RegExp(objFormControl[i].pattern);
-            //     console.log("RegEx test outcome: " + regEx.test(objFormControl[i].value));
-            // }   
+            else {
+             // element has pattern specified - get the pattern and test control input
+                console.log(objFormControl[i].type);
+                regEx = RegExp(objFormControl[i].pattern);
+                console.log(regEx);
+                blnFormCtrlValid = regEx.test(objFormControl[i].value);
+                
+                if (!blnFormCtrlValid){
+                    blnFormValid = false;
+                    console.log(blnFormCtrlValid + " :: " + blnFormValid);
+                }
+
+            }   
 
             // check outcome of control validation - if false, highlight the textbox and add the 
             // label (innerHTML) value to the arFieldErrors array 
             if (!blnFormCtrlValid) {
                 // get label name for control and populate it into array
                 objFormControlDesc = document.getElementById(objFormControl[i].name + "Label");
-                console.log(objFormControlDesc.innerHTML);
                 arFieldErrors.push(objFormControlDesc.innerHTML);
             }
         }
         console.log(arFieldErrors);
+        
     }
     //******************** */ end for loop *************************************************************************//
     
-    // i = 0
-    // //strError = "There are errors with your registration form.<br>Please check the following fields to ensure they are completed correctly:<br>"
-    // for (i = 0; i < arFieldErrors.length; i++){
-    //     console.log(arFieldErrors[i]);
-    //     strError += arFieldErrors[i] + "<br>"
-    // }
+    if (!blnFormValid){
+        i = 0
+        var strError = "There are errors with your registration form.<br>Please check the following fields to ensure they are completed correctly:<br>"
+        for (i = 0; i < arFieldErrors.length; i++){
+            console.log(arFieldErrors[i]);
+            strError += arFieldErrors[i] + "<br>";
+        }
 
-    // blnFormValid = true;
-    // console.log(blnFormValid);
-    // if (blnFormValid) {
-        
-    //     //if all controls are valid, prompt user to confirm form submission
-    //     userConfirm = confirm("Confirm - do you want to submit this form?");
-        
-    //     //if user confirms, submit form
-    //     if (userConfirm) {
-    //         document.infoForm.submit();
-    //     }
-    // }   
-})
+        objFormError = document.getElementById("formError");
+        objFormError.innerHTML = strError;
+        objFormError.style.display = "inline";
+
+    } else {
+        console.log(blnFormValid);
+        if (blnFormValid) {
+            
+            //if all controls are valid, prompt user to confirm form submission
+            userConfirm = confirm("Confirm - do you want to submit this form?");
+            
+            //if user confirms, submit form
+            if (userConfirm) {
+                document.infoForm.submit();
+            }
+        }
+    }   
+}
 
 
 // This function validates the user form, then prompts the 
