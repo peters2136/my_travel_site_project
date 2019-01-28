@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/sanitize.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>TravelCo Inc</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <h1  class="h_welcome"><img class="logo" src="images/Logo.jpg" alt="TravelCo Logo">Welcome Travel Experts</h1>
+        <nav class="nav"  id="nav"></nav><!-- Nav Menu content block generated via scripts.js --> 
+    </header>
+    <div class="header-spacer"></div>
+    <main>
+        <form action="bouncer.php" class="reg-form" name="infoForm" id="infoForm">
+            <table>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custName">Name</label></td>
+                    <td class="form-control">
+                        <input type="text" class="formInputCtrl" name="custName" id="custName" pattern="^[A-Z]\d[A-Z] ?\d[A-Z]\d$">
+                        <p class="form-instructions" id="custNameInstruct">Please provide First and Last name.</p>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custAddress">Street Address</label></td>
+                    <td class="form-control">
+                        <input type="text" class="formInputCtrl" name="custAddress" id="custAddress">
+                        <p class="form-instructions" id="custAddressInstruct">Provide full street address.</p>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custCity">City</label></td>
+                    <td class="form-control">
+                        <input type="text" class="formInputCtrl" name="custCity" id="custCity">
+                        <p class="form-instructions" id="custCityInstruct">Enter a complete city name.</p>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custProvState">Province/State</label></td>
+                    <td class="form-control">
+                        <select name="selectBoxDropDown">
+                            <option value="AB">AB</option>
+                            <option value="BC">BC</option>
+                            <option value="SK">SK</option>
+                        </select><br>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custPC">Postal Code</label></td>
+                    <td class="form-control">
+                        <input type="text" class="formInputCtrl" name="custPC" id="custPC" pattern="^[A-Z]\d[A-Z] ?\d[A-Z]\d$">
+                        <p class="form-instructions" id="custPCInstruct">Please format as A5A 5A5.</p>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custPhone">Phone</label></td>
+                    <td class="form-control">
+                        <input type="text" class="formInputCtrl" name="custPhone1" id="custPhone1">
+                        <p class="form-instructions" id="custPhone1Instruct">10 digits with dashes (i.e. ###-###-####)</p>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption"><label for="custEmail">Email</label></td>
+                    <td class="form-control">
+                        <input type="email" class="formInputCtrl" name="custEmail" id="custEmail">
+                        <p class="form-instructions" id="custEmailInstruct">Valid email address required (i.e. name@email.com)</p>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                        <td class="form-caption"><label for="custPrefLocations">Preferred Locations</label></td>
+                        <td class="form-control">
+                                <input type="checkbox" name="custPrefLocations" value="North America" id="ckNorthAmerica"/>
+                                <label for="ckNorthAmerica">North America</label><br>
+                                <input type="checkbox" name="custPrefLocations" value="Europe" id="ckEurope" />
+                                <label for="ckEurope">Europe</label><br>
+                                <p class="form-instructions" id="custPrefLocationsInstruct" >select at least one location</p>
+                        </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption">Priority</td>
+                    <td>
+                        <input type="radio" name="rdPriority" value="Adventure" id="rdAdventure" /> 
+                        <label for="varPepperoni">Adventure</label><br>
+                        <input type="radio" name="rdPriority" value="Relaxation" id="rdRelaxation" /> 
+                        <label for="varPepperoni">Relaxation</label><br>
+                        <input type="radio" name="rdPriority" value="Site Seeing" id="rdSiteSeeing" /> 
+                        <label for="varPepperoni">Site Seeing</label><br>
+                    </td>
+                </tr>
+                <tr class="form-row">
+                    <td class="form-caption" colspan="2">
+                        <input type="submit" value="Submit" id="regSubmit"></input>
+                        <input type="reset" value="Reset" id="regReset"></input>
+                    </td>
+                </tr>
+            </table> 
+        </form>
+        <footer>
+        <!-- Footer content block generated via scripts.js -->
+        </footer>
+    </main>
+
+    <script src="js/registration.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -16,88 +16,82 @@
     <div class="header-spacer"></div>
     <main>
         <form action="bouncer.php" class="reg-form" name="infoForm" id="infoForm">
-            <table>
-                <tr class="form-row">
-                    <td class="form-caption"><label for="custName">Name</label></td>
-                    <td class="form-control">
-                        <input type="text" class="regControl" name="custName" id="custName">
-                        <p class="form-instructions" id="custNameInstruct"></p>
-                    </td>
-                </tr>
-                <tr class="form-row">
-                    <td class="form-caption"><label for="custAddress">Street Address</label></td>
-                    <td class="form-control">
-                        <input type="text" class="regControl" name="custAddress" id="custAddress">
-                        <p class="form-instructions" id="custAddressInstruct"></p>
-                    </td>
-                </tr>
-                <tr class="form-row">
-                    <td class="form-caption"><label for="custCity">City</label></td>
-                    <td class="form-control">
-                        <input type="text" class="regControl" name="custCity" id="custCity">
-                        <p class="form-instructions" id="custCityInstruct"></p>
-                    </td>
-                </tr>
-                <tr class="form-row">
-                    <td class="form-caption"><label for="custProvState">Province/State</label></td>
-                    <td class="form-control">
-                        <select name="selectBoxDropDown">
-                            <option value="AB">AB</option>
-                            <option value="BC">BC</option>
-                            <option value="SK">SK</option>
-                        </select><br>
-                    </td>
-                </tr>
-                <tr class="form-row">
-                    <td class="form-caption"><label for="custPC">Postal Code</label></td>
-                    <td class="form-control">
-                        <input type="text" class="regControl" name="custPC" id="custPC">
-                        <p class="form-instructions" id="custPCInstruct"></p>
-                    </td>
-                </tr>
-                <tr class="form-row">
-                    <td class="form-caption"><label for="custPhone">Phone</label></td>
-                    <td class="form-control">
-                        <input type="text" class="regControl" name="custPhone1" id="custPhone1">
-                        <p class="form-instructions" id="custNameInstruct"></p>
-                    </td>
-                </tr>
-                <tr class="form-row">
-                    <td class="form-caption"><label for="custEmail">Email</label></td>
-                    <td class="form-control">
-                        <input type="email" class="regControl" name="custEmail" id="custEmail">
-                        <p class="form-instructions" id="custNameInstruct"></p>
-                    </td>
-                </tr>
-                <tr class="form-row">
-                    <td class="form-caption">Preferred Locations
-                            <p class="form-instructions" id="custLocationInstruct">(check all that apply)</p>
-                    </td>
-                    <td class="form-control">
-                        <input type="checkbox" name="ckNorthAmerica" value="North America" id="ckNorthAmerica"/>
-                        <label for="ckNorthAmerica">North America</label><br>
-                        <input type="checkbox" name="ckEurope" value="Europe" id="ckEurope" />
-                        <label for="ckEurope">Europe</label><br>
-                    </td>
-                </tr>
-                <tr class="form-row">
-                    <td class="form-caption">Priority</td>
-                    <td>
-                        <input type="radio" name="rdPriority" value="Adventure" id="rdAdventure" /> 
-                        <label for="varPepperoni">Adventure</label><br>
-                        <input type="radio" name="rdPriority" value="Relaxation" id="rdRelaxation" /> 
-                        <label for="varPepperoni">Relaxation</label><br>
-                        <input type="radio" name="rdPriority" value="Site Seeing" id="rdSiteSeeing" /> 
-                        <label for="varPepperoni">Site Seeing</label><br>
-                    </td>
-                </tr>
-                <tr class="form-row">
-                    <td class="form-caption" colspan="2">
-                        <input type="submit" value="Submit" id="regSubmit"></input>
-                        <input type="reset" value="Reset" id="regReset"></input>
-                    </td>
-                </tr>
-            </table> 
+            
+            <!-- Customer Name -->
+            <p>
+                <label class="formItemDesc" for="custName" id="custNameLabel">Name</label>
+                <input type="text" class="formInputCtrl" name="custName" id="custName">
+            </p>
+            <p class="form-instructions" id="custNameInstruct">Please provide First and Last name.</p>
+            
+            <!-- Customer street address -->
+            <p>
+                <label class="formItemDesc" for="custAddress" id="custAddressLabel">Street Address</label>
+                <input type="text" class="formInputCtrl" name="custAddress" id="custAddress">
+            </p>
+            <p class="form-instructions" id="custAddressInstruct">Provide full street address.</p>
+            
+            <!-- Customer City -->
+            <p>
+                <label class="formItemDesc" for="custCity" id="custCityLabel">City</label>
+                <input type="text" class="formInputCtrl" name="custCity" id="custCity">  
+            </p>
+            <p class="form-instructions" id="custCityInstruct">Enter a complete city name.</p>
+            
+            <!-- Customer Prov/State -->
+            <p>
+                <label class="formItemDesc" for="custProvState" id="custProvStateLabel">Province/State</label>
+                <select name="selectBoxDropDown">
+                    <option value="AB">AB</option>
+                    <option value="BC">BC</option>
+                    <option value="SK">SK</option>
+                </select><br>
+            </p>
+            <!-- Customer PC -->
+            <p>
+                <label class="formItemDesc" for="custPC" id="custPCLabel">Postal Code</label>
+                <input type="text" class="formInputCtrl" name="custPC" id="custPC" pattern="^[A-Z]\d[A-Z] ?\d[A-Z]\d$">   
+            </p>
+            <p class="form-instructions" id="custPCInstruct">Please format as A5A 5A5.</p>
+            
+            <!-- Customer Phone -->
+            <p>
+                <label class="formItemDesc" for="custPhone1" id="custPhone1Label">Phone</label>
+                <input type="text" class="formInputCtrl" name="custPhone1" id="custPhone1">
+            </p>
+            <p class="form-instructions" id="custPhone1Instruct">10 digits with dashes (i.e. ###-###-####)</p>
+            
+            <!-- Customer Email -->
+            <p>
+                <label class="formItemDesc" for="custEmail" id="custEmailLabel">Email</label>
+                <input type="email" class="formInputCtrl" name="custEmail" id="custEmail">
+                <p class="form-instructions" id="custEmailInstruct">Valid email address required (i.e. name@email.com)</p>
+            </p>
+            
+            <!-- Customer Preferred Locations -->
+            <fieldset>
+                <legend name="Destinations" id="custDestinationLegend">Destinations</legend>
+                <input type="checkbox" name="Destinations" value="North America" id="ckNorthAmerica"/>
+                <label for="ckNorthAmerica">North America</label><br>
+                <input type="checkbox" name="Destinations" value="Europe" id="ckEurope" />
+                <label for="ckEurope">Europe</label><br>
+                <p class="form-instructions" id="DestinationsInstruct" >select at least one location</p>
+            </fieldset><br>
+
+            <!-- Customer priority -->
+            <fieldset>
+                <legend name="Priority" id="custPriorityLegend">Travel Priority</legend>
+                <input type="radio" name="Priority" value="Adventure" id="rdAdventure" /> 
+                <label for="rdAdventure">Adventure</label><br>
+                <input type="radio" name="Priority" value="Relaxation" id="rdRelaxation" /> 
+                <label for="rdRelaxation">Relaxation</label><br>
+                <input type="radio" name="Priority" value="Site Seeing" id="rdSiteSeeing" /> 
+                <label for="rdSiteSeeing">Site Seeing</label><br>
+            </fieldset><br>
+
+            <!-- Submit and Reset buttons -->
+            <input type="submit" value="Submit" id="regSubmit"></input>
+            <input type="reset" value="Reset" id="regReset"></input>
         </form>
         <footer>
         <!-- Footer content block generated via scripts.js -->
